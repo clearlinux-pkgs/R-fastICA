@@ -1,1 +1,4 @@
 # This file contains recursive sources that require this package
+R-caret
+R-dimRed
+R-recipes
