@@ -4,7 +4,7 @@
 #
 Name     : R-fastICA
 Version  : 1.2.1
-Release  : 15
+Release  : 16
 URL      : https://cran.r-project.org/src/contrib/fastICA_1.2-1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/fastICA_1.2-1.tar.gz
 Summary  : FastICA Algorithms to Perform ICA and Projection Pursuit
