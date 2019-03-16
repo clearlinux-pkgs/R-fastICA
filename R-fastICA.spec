@@ -4,17 +4,21 @@
 #
 Name     : R-fastICA
 Version  : 1.2.1
-Release  : 17
+Release  : 18
 URL      : https://cran.r-project.org/src/contrib/fastICA_1.2-1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/fastICA_1.2-1.tar.gz
 Summary  : FastICA Algorithms to Perform ICA and Projection Pursuit
 Group    : Development/Tools
 License  : GPL-2.0 GPL-3.0
-Requires: R-fastICA-lib
+Requires: R-fastICA-lib = %{version}-%{release}
 BuildRequires : buildreq-R
 
 %description
-Component Analysis (ICA) and Projection Pursuit.
+R Package - fastICA
+INTRODUCTION
+This file explains how to install the R package fastICA. I assume
+that you have a basic knowledge of UNIX/LINUX and that you already
+have R installed on your machine.
 
 %package lib
 Summary: lib components for the R-fastICA package.
@@ -32,11 +36,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1537797886
+export SOURCE_DATE_EPOCH=1552758163
 
 %install
+export SOURCE_DATE_EPOCH=1552758163
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1537797886
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -71,8 +75,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library fastICA|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  fastICA || :
 
 
 %files
@@ -98,7 +101,7 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/fastICA/help/paths.rds
 /usr/lib64/R/library/fastICA/html/00Index.html
 /usr/lib64/R/library/fastICA/html/R.css
-/usr/lib64/R/library/fastICA/libs/symbols.rds
+/usr/lib64/R/library/fastICA/tests/one-component.R
 
 %files lib
 %defattr(-,root,root,-)
