@@ -4,7 +4,7 @@
 #
 Name     : R-fastICA
 Version  : 1.2.2
-Release  : 25
+Release  : 26
 URL      : https://cran.r-project.org/src/contrib/fastICA_1.2-2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/fastICA_1.2-2.tar.gz
 Summary  : FastICA Algorithms to Perform ICA and Projection Pursuit
@@ -12,6 +12,7 @@ Group    : Development/Tools
 License  : GPL-2.0 GPL-3.0
 Requires: R-fastICA-lib = %{version}-%{release}
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
 R Package - fastICA
@@ -36,10 +37,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1562649396
+export SOURCE_DATE_EPOCH=1571827148
 
 %install
-export SOURCE_DATE_EPOCH=1562649396
+export SOURCE_DATE_EPOCH=1571827148
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
