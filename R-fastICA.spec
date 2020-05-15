@@ -4,7 +4,7 @@
 #
 Name     : R-fastICA
 Version  : 1.2.2
-Release  : 29
+Release  : 30
 URL      : https://cran.r-project.org/src/contrib/fastICA_1.2-2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/fastICA_1.2-2.tar.gz
 Summary  : FastICA Algorithms to Perform ICA and Projection Pursuit
@@ -12,14 +12,9 @@ Group    : Development/Tools
 License  : GPL-2.0 GPL-3.0
 Requires: R-fastICA-lib = %{version}-%{release}
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
-R Package - fastICA
-INTRODUCTION
-This file explains how to install the R package fastICA. I assume
-that you have a basic knowledge of UNIX/LINUX and that you already
-have R installed on your machine.
+Component Analysis (ICA) and Projection Pursuit.
 
 %package lib
 Summary: lib components for the R-fastICA package.
@@ -31,21 +26,22 @@ lib components for the R-fastICA package.
 
 %prep
 %setup -q -c -n fastICA
+cd %{_builddir}/fastICA
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571827148
+export SOURCE_DATE_EPOCH=1589530440
 
 %install
-export SOURCE_DATE_EPOCH=1571827148
+export SOURCE_DATE_EPOCH=1589530440
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
